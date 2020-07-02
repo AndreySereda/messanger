@@ -25,6 +25,12 @@ gem 'sidekiq'
 gem "letter_opener", :group => :development
 gem 'activerecord-session_store'
 gem 'bootstrap-sass'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'slim-rails'
+gem 'haml'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

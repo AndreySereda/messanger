@@ -1,0 +1,15 @@
+<% provide(:title, 'All chats') %>
+<nav class="navbar navbar-expand-sm bg-light">
+</nav>
+<h1>All Chats</h1>
+<ul class="chats">
+  <h4><%= link_to 'Create Chat', new_chat_path %></h4>
+  <% @chats.each do |chat| %>
+    <li>
+      <td><%= chat.title %></td>
+      <td><%= link_to 'Show', chat %></td>
+      <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
+      <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </li>
+  <% end %>
+</ul>
