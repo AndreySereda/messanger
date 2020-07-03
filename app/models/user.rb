@@ -2,12 +2,24 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, #:validatable,
          :omniauthable, omniauth_providers: %i[twitter] # add these two!
   has_many :user_chats
   validates :name, presence: true
   validates :nickname, presence: true
   validates :nickname, uniqueness: true
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
+
+  def will_save_change_to_email?
+    false
+  end
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
