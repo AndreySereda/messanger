@@ -1,0 +1,9 @@
+<li>
+  <td><%= link_to 'All Chat', chats_path(@chat) %></td>
+</li>
+
+<%= form_for @chat do |f| %>
+  <%= f.label :chat %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create" %>
+<% end %>

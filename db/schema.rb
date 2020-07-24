@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_102724) do
     t.string "nickname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -64,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_06_25_102724) do
     t.string "unconfirmed_email"
     t.string "provider"
     t.string "uid"
-    t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
